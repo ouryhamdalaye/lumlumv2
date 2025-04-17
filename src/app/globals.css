@@ -1,0 +1,170 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-arabic: 'Arial', sans-serif; /* Updated to standard font */
+  --font-body: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Updated to standard font */
+  --font-title: 'Georgia', serif; /* Updated to standard font */
+}
+
+@font-face {
+  font-family: 'Arabic';
+  src: url(https://ext.same-assets.com/1734499609/700631602.otf) format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Body';
+  src: url(https://ext.same-assets.com/1734499609/3253795514.woff2) format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Title';
+  src: url(https://ext.same-assets.com/1734499609/3882815101.woff2) format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --background: 40 50% 96%;
+    --foreground: 240 36% 8%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 36% 8%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 36% 8%;
+
+    --primary: 240 24% 8%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 240 4% 46%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 240 4% 96%;
+    --muted-foreground: 240 4% 46%;
+
+    --accent: 240 4% 96%;
+    --accent-foreground: 240 6% 10%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 6% 90%;
+    --input: 240 6% 90%;
+    --ring: 240 5% 65%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 240 36% 8%;
+    --foreground: 0 0% 98%;
+
+    --card: 240 24% 8%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 240 24% 8%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 6% 10%;
+
+    --secondary: 240 4% 26%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 240 4% 16%;
+    --muted-foreground: 240 4% 70%;
+
+    --accent: 240 4% 16%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 4% 26%;
+    --input: 240 4% 26%;
+    --ring: 240 4% 70%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-brand-foreground text-brand-darkest;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Updated to standard font */
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Georgia', serif; /* Updated to standard font */
+  }
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl font-bold;
+  }
+  h2 {
+    @apply text-3xl md:text-4xl font-bold;
+  }
+  h3 {
+    @apply text-xl md:text-2xl font-bold;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2 rounded-full font-medium text-sm transition-colors;
+  }
+  .btn-dark {
+    @apply bg-brand-darkest text-white hover:bg-opacity-80;
+  }
+  .btn-light {
+    @apply bg-white text-brand-darkest hover:bg-opacity-80;
+  }
+  .btn-circle {
+    @apply flex items-center justify-center rounded-full w-10 h-10;
+  }
+  .btn-circle-action {
+    @apply bg-brand-darker text-white hover:bg-opacity-80;
+  }
+  .btn-icon {
+    @apply p-3 rounded-full;
+  }
+  .sticker {
+    @apply inline-block px-3 py-1 rounded-full text-xs uppercase font-semibold;
+  }
+  .sticker-light {
+    @apply bg-white text-brand-darkest;
+  }
+  .sticker-gradient {
+    @apply bg-gradient-text text-transparent bg-clip-text;
+  }
+  .price-light {
+    @apply text-xl font-semibold text-white;
+  }
+  .link {
+    @apply inline-flex items-center gap-2 font-medium;
+  }
+  .link-dark {
+    @apply text-white hover:text-brand-lighter;
+  }
+  .link-base {
+    @apply text-white hover:text-brand-lighter;
+  }
+  .burger-line {
+    @apply w-full h-0.5 bg-white transition-transform;
+  }
+  .banner-gradient-dark {
+    @apply rounded-3xl bg-brand-darkest;
+  }
+  .product-card {
+    @apply transition-transform hover:scale-[1.01];
+  }
+}
